@@ -53,6 +53,12 @@ public interface VenueOperations {
 	List<Venue> search(VenueSearchParams query);
 	
 	/**
+	 * The venues managed by the current user.
+	 * @return A list of venue.
+	 */
+	List<Venue> getManaged();
+	
+	/**
 	 * Retreive a list of venues near the specified location with the most people currently checked in. 
 	 * @param latitude	Latitude
 	 * @param longitude	Longitude

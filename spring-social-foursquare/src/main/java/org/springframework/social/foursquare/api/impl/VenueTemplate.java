@@ -65,6 +65,10 @@ public class VenueTemplate extends AbstractFoursquareOperations implements Venue
         return get(buildUri(VENUES_ENDPOINT + "search", query.toParameters()), VenueSearchContainer.class).getVenues();
     }
     
+    public List<Venue> getManaged() {
+        return get(buildUri(VENUES_ENDPOINT + "managed"), VenueSearchContainer.class).getVenues();
+    }
+    
     public List<Venue> getTrending(double latitude, double longitude, int radius, int limit) {
     	Map<String,String> params = new HashMap<String,String>();
     	params.put("ll", Double.toString(latitude) + "," + Double.toString(longitude));
